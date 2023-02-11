@@ -70,9 +70,9 @@ namespace Hooks
 		return value;
 	}
 
-	float Hook_PlayerCharacter::GetBaseActorValue(ActorValueOwner* a_owner, ActorValue a_akValue) { // Override Health and Sneak 
+	float Hook_PlayerCharacter::GetBaseActorValue(ActorValueOwner* a_owner, ActorValue a_akValue) { // Override Health
 		float value = _GetBaseActorValue(a_owner, a_akValue);
-		if (Plugin::Ready()) {
+		if (Plugin::Ready() && Plugin::Live()) {
 			Actor* a_this = skyrim_cast<Actor*>(a_owner);
 			float bonus = 1.0;
 			if (a_this) {
@@ -82,7 +82,7 @@ namespace Hooks
 		return value;
 	}
 
-	float Hook_PlayerCharacter::GetPermanentActorValue(ActorValueOwner* a_owner, ActorValue a_akValue) { // Override Carry Weight and Damage
+	float Hook_PlayerCharacter::GetPermanentActorValue(ActorValueOwner* a_owner, ActorValue a_akValue) { // Override Carry Weight
 		float value = _GetPermanentActorValue(a_owner, a_akValue);
 		if (Plugin::Ready()) {
 			Actor* a_this = skyrim_cast<Actor*>(a_owner);
