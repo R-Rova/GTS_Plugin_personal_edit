@@ -18,7 +18,7 @@ namespace Gts {
 			if (!removeQuestItems && entry->IsQuestObject()) {
 				continue;
 			}
-			RE::ExtraDataList a_extraList = new RE::ExtraDataList();
+			RE::ExtraDataList* a_extraList = new RE::ExtraDataList();
 			if (keepOwnership) {
 				a_extraList->SetOwner(entry->GetOwner());
 			} else {
