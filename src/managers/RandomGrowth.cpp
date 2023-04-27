@@ -121,7 +121,7 @@ namespace Gts {
 			int TotalPower = ((100 + this->Randomize)/100) * PosOrneg;
 			float Scale = get_target_scale(player);
 			float ProgressionMultiplier = Runtime::GetFloatOr("ProgressionMultiplier", 1.0);
-			float base_power = ((0.0.0025 * TotalPower * 60.0 * Scale) * ProgressionMultiplier);  // Put in actual power please
+			float base_power = ((0.0025 * TotalPower * 60.0 * Scale) * ProgressionMultiplier);  // Put in actual power please
 			RestoreStats(); // Regens Attributes if PC has perk
 			mod_target_scale(player, base_power * delta_time); // Use delta_time so that the growth will be the same regardless of fps
 			GrowthTremorManager::GetSingleton().CallRumble(player, player, base_power * 180);
